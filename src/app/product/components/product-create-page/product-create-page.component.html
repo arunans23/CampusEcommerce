@@ -1,0 +1,146 @@
+<div class="row register-container" data-hook="">
+  <div id="content" class="col-sm-12" data-hook="">
+    <div class="col-md-5 col-centered">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Create a product to sell</h3>
+        </div>
+        <div id="existing-customer" class="panel-body" data-hook="login">
+          <!--<div class="register-third-party-register">-->
+          <!--<p class="register-button-info-text register-info-text">EASILY USING</p>-->
+          <!--<div class="register-button-container">-->
+          <!--<button class="register-facebook register-button coming-soon">-->
+          <!--<span class="register-fb-logo register-sprite"></span>-->
+          <!--FACEBOOK-->
+          <!--</button>-->
+          <!--<button class="register-google register-button coming-soon" id="gPlusLogin"><span class="register-gplus-logo register-sprite"></span>-->
+          <!--GOOGLE-->
+          <!--</button>-->
+          <!--</div>-->
+          <!--</div>-->
+
+          <form class="register-register-form" novalidate="" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <fieldset class="register-input-container">
+
+              <div class="register-input-item">
+                <input type="text" class="register-user-input-email register-user-input" name="name" formControlName="name" placeholder="Your Product Name"
+                       autocomplete="off">
+                <div *ngIf="productForm.get('name').errors && productForm.get('name').touched">
+                  <span class="register-error-icon">!</span>
+                  <p class="register-error-message">{{productForm.get('name').errors.msg || 'Enter product name'}}</p>
+                </div>
+              </div>
+
+
+              <div class="register-input-item">
+                <input type="text" class="register-user-input-password register-user-input" name="price" formControlName="price" placeholder="Product price"
+                       autocomplete="off">
+                <div *ngIf="productForm.get('price').errors && productForm.get('price').touched">
+                  <span class="register-error-icon">!</span>
+                  <p class="register-error-message">{{productForm.get('price').errors.msg || 'Please enter a valid price'}}</p>
+                </div>
+              </div>
+
+
+
+              <div class="register-input-item">
+                <input type="text" class="register-user-input-password register-user-input" name="topics" formControlName="topics" placeholder="Topics related to product"
+                       autocomplete="off">
+                <div *ngIf="productForm.get('topics').errors && productForm.get('topics').touched">
+                  <span class="register-error-icon">!</span>
+                  <p class="register-error-message">{{productForm.get('topics').errors.msg || 'Please enter valid topics'}}</p>
+                </div>
+              </div>
+
+              <div class="register-input-item">
+                <input type="text" class="register-user-input-password register-user-input" name="image" formControlName="image" placeholder="Your Product Image URL"
+                       autocomplete="off">
+                <div *ngIf="productForm.get('image').errors && productForm.get('image').touched">
+                  <span class="register-error-icon">!</span>
+                  <p class="register-error-message">{{productForm.get('image').errors.msg || 'Please enter a valid URL'}}</p>
+                </div>
+              </div>
+
+              <!--<div class="register-input-item">-->
+                <!--<input type="text" class="register-user-input-password register-user-input" name="batch" formControlName="batch" placeholder="Your Batch"-->
+                       <!--autocomplete="off">-->
+                <!--<div *ngIf="signUpForm.get('batch').errors && signUpForm.get('batch').touched">-->
+                  <!--<span class="register-error-icon">!</span>-->
+                  <!--<p class="register-error-message">{{signUpForm.get('batch').errors.msg || 'Please enter a valid batch'}}</p>-->
+                <!--</div>-->
+              <!--</div>-->
+
+              <fieldset data-type="horizontal" class="register-gender">
+                <legend class="register-gender-title">Category</legend>
+
+                <input type="radio" class="register-gender-radio" id="books" name="category" value="books" formControlName="category">
+                <label class="register-gender-label" for="books">Books</label>
+
+                <input type="radio" class="register-gender-radio" id="electronic-gadgets" name="category" value="electronic-gadgets" formControlName="category">
+                <label class="register-gender-label" for="electronic-gadgets">E-gadgets</label>
+
+                <input type="radio" class="register-gender-radio" id="electronic-equipments" name="category" value="electronic-equipments" formControlName="category">
+                <label class="register-gender-label" for="electronic-equipments">Electronic equipments</label>
+
+
+
+                <input type="radio" class="register-gender-radio" id="tickets" name="category" value="tickets" formControlName="category">
+                <label class="register-gender-label" for="tickets">Tickets</label>
+
+                <input type="radio" class="register-gender-radio" id="lab-equipments" name="category" value="lab-equipments" formControlName="category">
+                <label class="register-gender-label" for="lab-equipments">Lab Equipments</label>
+
+                <input type="radio" class="register-gender-radio" id="others" name="category" value="others" formControlName="category">
+                <label class="register-gender-label" for="others">Others</label>
+
+                <div *ngIf="productForm.get('category').errors && productForm.get('category').touched">
+                  <span class="register-gender-error-icon register-error-icon">!</span>
+                  <p class="register-gender-error-message register-error-message">{{signUpForm.get('category').errors.msg || 'Please select the product category'}}</p>
+                </div>
+
+
+              </fieldset>
+
+
+              <fieldset data-type="horizontal" class="register-gender">
+                <legend class="register-gender-title">Selling method</legend>
+
+                <input type="radio" class="register-gender-radio" id="bidding" name="methods" value="bidding" formControlName="methods">
+                <label class="register-gender-label" for="books">Bidding</label>
+
+                <input type="radio" class="register-gender-radio" id="direct-sale" name="methods" value="direct-sale" formControlName="methods">
+                <label class="register-gender-label" for="direct-sale">Direct Sale</label>
+
+                <input type="radio" class="register-gender-radio" id="offering" name="methods" value="offering" formControlName="methods">
+                <label class="register-gender-label" for="offering">Offering</label>
+
+
+
+                <div *ngIf="productForm.get('category').errors && productForm.get('category').touched">
+                  <span class="register-gender-error-icon register-error-icon">!</span>
+                  <p class="register-gender-error-message register-error-message">{{signUpForm.get('category').errors.msg || 'Please select the selling method'}}</p>
+                </div>
+
+
+              </fieldset>
+
+
+
+
+
+
+
+            </fieldset>
+            <fieldset class="register-register-button-container">
+              <a href="/">
+              <button class="btn btn-danger register-register-button">CREATE</button>
+              </a>
+            </fieldset>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

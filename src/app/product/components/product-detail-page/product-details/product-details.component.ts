@@ -79,5 +79,6 @@ export class ProductDetailsComponent implements OnInit {
 
   addToCart(product: Product) {
     this.store.dispatch(this.checkoutActions.addToCart(this.variantId));
+    alert("Your seller has been contacted");
   }
 }

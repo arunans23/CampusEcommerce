@@ -6,19 +6,19 @@
           <h3 class="panel-title">Signup to {{title}}</h3>
         </div>
         <div id="existing-customer" class="panel-body" data-hook="login">
-          <div class="register-third-party-register">
-            <p class="register-button-info-text register-info-text">EASILY USING</p>
-            <div class="register-button-container">
-              <button class="register-facebook register-button coming-soon">
-                <span class="register-fb-logo register-sprite"></span>
-                FACEBOOK
-              </button>
-              <button class="register-google register-button coming-soon" id="gPlusLogin"><span class="register-gplus-logo register-sprite"></span>
-                  GOOGLE
-                </button>
-            </div>
-          </div>
-          <p class="register-button-info-text register-info-text">- OR USING EMAIL -</p>
+          <!--<div class="register-third-party-register">-->
+            <!--<p class="register-button-info-text register-info-text">EASILY USING</p>-->
+            <!--<div class="register-button-container">-->
+              <!--<button class="register-facebook register-button coming-soon">-->
+                <!--<span class="register-fb-logo register-sprite"></span>-->
+                <!--FACEBOOK-->
+              <!--</button>-->
+              <!--<button class="register-google register-button coming-soon" id="gPlusLogin"><span class="register-gplus-logo register-sprite"></span>-->
+                  <!--GOOGLE-->
+                <!--</button>-->
+            <!--</div>-->
+          <!--</div>-->
+          <p class="register-button-info-text register-info-text">- USING UNIVERSITY EMAIL -</p>
           <form class="register-register-form" novalidate="" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
             <fieldset class="register-input-container">
 
@@ -58,6 +58,44 @@
                 </div>
               </div>
 
+              <div class="register-input-item">
+                <input type="text" class="register-user-input-password register-user-input" name="university" formControlName="university" placeholder="Your University"
+                       autocomplete="off">
+                <div *ngIf="signUpForm.get('university').errors && signUpForm.get('university').touched">
+                  <span class="register-error-icon">!</span>
+                  <p class="register-error-message">{{signUpForm.get('university').errors.msg || 'Please enter a valid university'}}</p>
+                </div>
+              </div>
+
+              <div class="register-input-item">
+                <input type="text" class="register-user-input-password register-user-input" name="faculty" formControlName="faculty" placeholder="Your Faculty"
+                       autocomplete="off">
+                <div *ngIf="signUpForm.get('faculty').errors && signUpForm.get('faculty').touched">
+                  <span class="register-error-icon">!</span>
+                  <p class="register-error-message">{{signUpForm.get('faculty').errors.msg || 'Please enter a valid faculty'}}</p>
+                </div>
+              </div>
+
+              <div class="register-input-item">
+                <input type="text" class="register-user-input-password register-user-input" name="department" formControlName="department" placeholder="Your Department"
+                       autocomplete="off">
+                <div *ngIf="signUpForm.get('department').errors && signUpForm.get('department').touched">
+                  <span class="register-error-icon">!</span>
+                  <p class="register-error-message">{{signUpForm.get('department').errors.msg || 'Please enter a valid department'}}</p>
+                </div>
+              </div>
+
+              <div class="register-input-item">
+                <input type="text" class="register-user-input-password register-user-input" name="batch" formControlName="batch" placeholder="Your Batch"
+                       autocomplete="off">
+                <div *ngIf="signUpForm.get('batch').errors && signUpForm.get('batch').touched">
+                  <span class="register-error-icon">!</span>
+                  <p class="register-error-message">{{signUpForm.get('batch').errors.msg || 'Please enter a valid batch'}}</p>
+                </div>
+              </div>
+
+
+
               <fieldset data-type="horizontal" class="register-gender">
                 <legend class="register-gender-title">I'm a</legend>
 
@@ -71,7 +109,12 @@
                   <span class="register-gender-error-icon register-error-icon">!</span>
                   <p class="register-gender-error-message register-error-message">{{signUpForm.get('gender').errors.msg || 'Please select your gender'}}</p>
                 </div>
+
+
               </fieldset>
+
+
+
             </fieldset>
             <fieldset class="register-register-button-container">
               <button class="btn btn-danger register-register-button">REGISTER</button>

@@ -76,7 +76,12 @@ export class AuthService {
       if (!data.errors) {
         // Setting token after login
         this.setTokenInLocalStorage(res.json());
-        this.store.dispatch(this.actions.loginSuccess());
+        this.store.dispatch(this.actions.logoutSuccess());
+        this.http.loading.next({
+          loading: false,
+          hasError: true,
+          hasMsg: 'We will validate your account shortly'
+        });
       } else {
         this.http.loading.next({
           loading: false,

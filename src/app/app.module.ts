@@ -27,6 +27,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/finally';
 import 'rxjs/add/observable/of';
+import { ProductCreatePageComponent } from './product/components/product-create-page/product-create-page.component';
 
 @NgModule({
   declarations: [

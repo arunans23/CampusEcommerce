@@ -22,12 +22,14 @@ import { ProductRoutes as routes } from './product.routes';
 // Effects
 import { EffectsModule } from '@ngrx/effects';
 import { ProductEffects } from './effects/product.effects';
+import {ProductCreatePageComponent} from "./components/product-create-page/product-create-page.component";
 
 
 @NgModule({
   declarations: [
     // components
     ProductDetailPageComponent,
+    ProductCreatePageComponent,
     ProductComponent,
     ProductDetailsComponent,
     ProductImagesComponent,
@@ -38,6 +40,7 @@ import { ProductEffects } from './effects/product.effects';
   ],
   exports: [
     // components
+    ProductCreatePageComponent,
     ProductDetailPageComponent,
     ProductDetailsComponent,
     ProductImagesComponent,

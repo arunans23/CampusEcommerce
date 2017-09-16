@@ -22,7 +22,7 @@ export class ProductDetailPageComponent implements OnInit {
   /**On Init
    * 1. Parse route params
    * 2. Retrive product id
-   * 3. Ask for the product detail based on product id 
+   * 3. Ask for the product detail based on product id
    * */
     this.actionsSubscription = this.route.params.subscribe(
       (params: any) => {
@@ -43,6 +43,7 @@ export class ProductDetailPageComponent implements OnInit {
    * when added to cart
    */
   addToCart(){
+    alert("Your seller has been contacted");
     return;
   }
 

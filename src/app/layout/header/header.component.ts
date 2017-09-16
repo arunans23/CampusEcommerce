@@ -22,9 +22,9 @@ export class HeaderComponent implements OnInit {
   taxonomies$: Observable<any>;
   taxonList = [{
     "id": 4,
-    "name": "Mugs",
-    "pretty_name": "Categories -> Mugs",
-    "permalink": "categories/mugs",
+    "name": "Books",
+    "pretty_name": "Categories -> Books",
+    "permalink": "categories/books",
     "parent_id": 1,
     "taxonomy_id": 1,
     "taxons": null},
@@ -38,17 +38,17 @@ export class HeaderComponent implements OnInit {
     "taxons": null
   }, {
     "id": 8,
-    "name": "Ruby",
-    "pretty_name": "Brand -> Ruby",
-    "permalink": "brand/ruby",
+    "name": "Electronics",
+    "pretty_name": "Brand -> Electronics",
+    "permalink": "brand/electronics",
     "parent_id": 2,
     "taxonomy_id": 2,
     "taxons": null
   }, {
      "id": 9,
-    "name": "Apache",
-    "pretty_name": "Brand -> Apache",
-    "permalink": "brand/apache",
+    "name": "Tshirts",
+    "pretty_name": "Brand -> Tshirts",
+    "permalink": "brand/tshirts",
     "parent_id": 2,
     "taxonomy_id": 2,
     "taxons": null
